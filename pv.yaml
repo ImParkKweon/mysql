@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: capstone-mysql-pv
+  namespace: capstone
+spec:
+  storageClassName: capstone-storage
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data/capstone_mysql"
+  persistentVolumeReclaimPolicy: Retain
