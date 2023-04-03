@@ -21,7 +21,7 @@ spec:
         - name: SECRET_PASSWD
           valueFrom:
             secretKeyRef:
-              name: database-creds
+              name: database-creds-482chgf2c8
               key: password
         command:
 
