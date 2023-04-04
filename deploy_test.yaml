@@ -35,7 +35,6 @@ spec:
               key: password
       volumes:
         - name: capstone-mysql-pvc
-        namespace: capstone
           persistentVolumeClaim:
             claimName: capstone-mysql-pvc
 
