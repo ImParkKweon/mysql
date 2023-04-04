@@ -2,3 +2,4 @@ kustomization.yaml
 dockerfile
 deploy.yaml
 secret.sh
+mysql-index
