@@ -17,12 +17,28 @@ spec:
         image: mysql:8.0.32
         ports:
         - containerPort: 8080
+        volumeMounts:
+            - mountPath: "/var/lib/mysql"
+              name: capstone-mysql-pvc
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_RANDOM_ROOT_PASSWORD
+          value: "yes"
+        - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
-              name: database-creds-482chgf2c8
+              name: database-creds
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: database-creds
               key: password
-        command:
+      volumes:
+        - name: capstone-mysql-pvc
+          persistentVolumeClaim:
+            claimName: capstone-mysql-pvc
+
+            
+
 
 
