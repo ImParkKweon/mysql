@@ -2,7 +2,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: capstone-mysql-pv
-  namespace: capstone
+  # namespace: capstone
+  namespace: default
 spec:
   storageClassName: capstone-storage
   capacity:
