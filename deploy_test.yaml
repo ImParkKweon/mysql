@@ -39,8 +39,3 @@ spec:
         - name: capstone-mysql-pvc
           persistentVolumeClaim:
             claimName: capstone-mysql-pvc
-
-            
-
-
-
