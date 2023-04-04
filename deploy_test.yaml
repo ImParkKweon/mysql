@@ -39,3 +39,27 @@ spec:
         - name: capstone-mysql-pvc
           persistentVolumeClaim:
             claimName: capstone-mysql-pvc
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-web-deploy
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: capstone
+  template:
+    metadata:
+      labels:
+        app: capstone
+    spec:
+      containers:
+      - name: capstone
+        image: hyunjun1325/node:0.11
+        ports:
+        - containerPort: 8080
+        command: ["/bin/bash","-ec", "while :; do sleep 5; done"]
