@@ -10,3 +10,17 @@ spec:
     - protocol: TCP
       port: 3306
       targetPort: 3306
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-nodejs-nodeport
+  namespace: default
+spec:
+  type: NodePort
+  ports:
+  - port: 52401 #svc 조회했을때 clusterIP:Port  index.js에서 listening하는 포트
+    targetPort: 52401 #endpoints(컨테이너IP:Port)
+    nodePort: 30124 #외부 IP에서 접근할 포트
+  selector:
+    app: mysql
