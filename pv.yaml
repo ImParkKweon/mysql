@@ -13,7 +13,7 @@ spec:
   hostPath:
     path: "/mnt/data/capstone_mysql"
   persistentVolumeReclaimPolicy: Retain
-  ---
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
