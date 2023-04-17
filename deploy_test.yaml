@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: test
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -46,7 +46,7 @@ metadata:
   name: test-web-deploy
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: capstone
